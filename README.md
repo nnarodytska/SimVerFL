@@ -12,7 +12,7 @@ where
 
 ### Examples 
 
-Ex1: peronalization round = 0, training = fedavg (no personalization)
+Ex1: personalization round = 0, training = fedavg (no personalization)
 
 python3.8 read_models.py --path  ./trained_models/fedavg/square/results_SimpleFC_square_sds_8_8_pr_0_mu_0.001_cts_1_data_default.fedavg.2000.pt
 
@@ -22,10 +22,10 @@ python3.8 read_models.py --path  ./trained_models/fedavg/square/results_SimpleFC
 
 
 
-Ex3: peronalization round = 0, training = fedprox (no personalization)
+Ex3: personalization round = 0, training = fedprox (no personalization)
 
 python3.8 read_models.py --path  ./trained_models/fedprox/square/results_SimpleFC_square_sds_8_8_pr_0_mu_0.5_cts_2_data_default.fedprox.2000.pt
 
-Ex4: peronalization round = 100, training = fedprox
+Ex4: personalization round = 100, training = fedprox
 
 python3.8 read_models.py --path  ./trained_models/fedprox/square/results_SimpleFC_square_sds_8_8_pr_100_mu_0.5_cts_2_data_default.fedprox.2000.pt
