@@ -135,9 +135,11 @@ if __name__ == '__main__':
     for id, net in trained_models.items():
         # load data
         if (id != -1):
+            #clients data
             testset = dataloader.get_client_test_data(id)
             testloader = torch.utils.data.DataLoader(testset, batch_size=trainining_args.client_batch_size, shuffle=True, num_workers=0, pin_memory=True)         
         else:
+            # global model, so test data contains all data. We can use it for debugging 
             testset = dataloader.get_test_data()
             testloader = torch.utils.data.DataLoader(testset, batch_size=trainining_args.client_batch_size, shuffle=True, num_workers=0, pin_memory=True)     
 

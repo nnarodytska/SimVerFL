@@ -21,7 +21,7 @@ Ex1: personalization round = 0, training = fedavg (if personalization round = 0 
 
 python3.8 read_models.py --path  ./trained_models/fedavg/square/results_SimpleFC_square_sds_8_8_pr_0_mu_0.001_cts_1_data_default.fedavg.2000.pt
 
-Ex2: peronalization round = 100, training = fedavg
+Ex2: personalization round = 100, training = fedavg
 
 python3.8 read_models.py --path  ./trained_models/fedavg/square/results_SimpleFC_square_sds_8_8_pr_100_mu_0.001_cts_1_data_default.fedavg.2000.pt
 
