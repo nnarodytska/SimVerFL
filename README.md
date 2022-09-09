@@ -5,10 +5,11 @@
 
 python3.8 read_models.py --path  ./trained_models/[YYY]/square/results_SimpleFC_square_sds_8_8_pr_[XXX]_mu_0.001_cts_1_data_default.fedavg.2000.pt
 
-where XXX is peronalization round, possible values are [1,2,...,100]
+where 
+    XXX is peronalization round, possible values are [1,2,...,100]
 
 
-      YYY is traingg variant, possible values are  [fedavg, fedprox]
+    YYY is traingg variant, possible values are  [fedavg, fedprox]
 
 ### Examples 
 
