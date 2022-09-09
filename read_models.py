@@ -107,7 +107,7 @@ def read_models(path, debug = False):
         trained_models[id] = copy.deepcopy(local_model)
     
         id +=1
-    return trained_models, testloader, trainloader
+    return trained_models, dataloader, trainining_args
 
 if __name__ == '__main__':
 
@@ -129,12 +129,22 @@ if __name__ == '__main__':
 
 
     #**************** Read models ****************# 
-    trained_models, testloader, trainloader = read_models(path, debug)
+    trained_models, dataloader, trainining_args = read_models(path, debug)
 
     #**************** Test models ****************# 
     for id, net in trained_models.items():
+        # load data
+        if (id != -1):
+            testset = dataloader.get_client_test_data(id)
+            testloader = torch.utils.data.DataLoader(testset, batch_size=trainining_args.client_batch_size, shuffle=True, num_workers=0, pin_memory=True)         
+        else:
+            testset = dataloader.get_test_data()
+            testloader = torch.utils.data.DataLoader(testset, batch_size=trainining_args.client_batch_size, shuffle=True, num_workers=0, pin_memory=True)     
+
+        # test model
         test_correct = 0
         test_total = 0
+
         with torch.no_grad():
             for inputs, targets in testloader:
                 inputs, targets = inputs.to(device), targets.to(device)
